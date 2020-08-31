@@ -1,5 +1,6 @@
 # Mkode_syntax_highlighter
 Mkode syntax highlighter for Sublime Text.
+![syntax](https://github.com/raklaptudirm/Mkode_syntax_highlighter/blob/master/Syntax.png)
 ## Features:
 * Keyword highlighting
 * Stray bracket highlighting
