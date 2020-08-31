@@ -1,0 +1,91 @@
+%YAML 1.2
+---
+file_extensions: [mkode,kode]
+scope: mkode.standard
+contexts:
+  main:
+
+    - match: '"'
+      scope: mkode.ustring
+      push: double_quoted_string
+    
+    - match: (')
+      scope: mkode.cstring
+      push: single_quoted_string
+
+    - match: (#')
+      scope: mkode.comment.multiline
+      push: multiline_comment
+
+    - match: '#'
+      scope: mkode.comment.singleline
+      push: line_comment
+
+    - match: \(
+      push: brackets1
+    - match: \)
+      scope: invalid.illeagal.stray_bracket_end
+
+    - match: \{
+      push: brackets2
+    - match: \}
+      scope: invalid.illeagal.stray_bracket_end
+
+    - match: \[
+      push: brackets3
+    - match: \]
+      scope: invalid.illeagal.stray_bracket_end
+
+    - match: (:|,)
+      scope: punctuation.separator.mkode
+
+    - match: (;)
+      scope: punctuation.terminator.mkode
+
+    - match: (int|float|char|string|var|bool|unsigned|void|const)
+      scope: storage.type.mkode
+
+    - match: '\b(Console|Kode|New)\b'
+      scope: keyword.control.mkode
+
+    - match: '\b((-)?[0-9.]+|NaN|infinity|true|false)\b'
+      scope: constant.numeric.mkode
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.mkode
+    - match: (\\"|\\s|\\')
+      scope: constant.character.escape.mkode
+    - match: '"'
+      scope: punctuation.definition.string.end
+      pop: true
+
+  multiline_comment:
+    - meta_scope: comment.line.multi
+    - match: ('#)
+      pop: true
+
+  single_quoted_string:
+    - meta_scope: string.quoted.single
+    - match: (')
+      scope: punctuation.definition.string.end
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.single
+    - match: $
+      pop: true
+
+  brackets1:
+    - match: \)
+      pop: true
+    - include: main
+
+  brackets2:
+    - match: \}
+      pop: true
+    - include: main
+
+  brackets3:
+    - match: \]
+      pop: true
+    - include: main
