@@ -1,4 +1,6 @@
 # Mkode_resources: Resources for the Mkode programming language
+## Learn Mkode
+Learn MkodeLang in this repository.
 ## Syntax Highlighter(Sublime Text):
 Mkode syntax highlighter for Sublime Text.
 ![syntax](https://github.com/raklaptudirm/Mkode_syntax_highlighter/blob/master/Syntax.png)
