@@ -1,0 +1,6 @@
+#Program to convert Fahrenheit to Celcius
+New:var[f,c]; #Variable Declaration
+Console:out["Enter temperature in Fahrenheit: "]; #Asking for input
+Kode:in[]:f; #Taking input
+c=((f-32)/9)*5; #Calculating for c/5=(f-32)/9
+Console:out[f@" degree Fahrenheit in Celcius: "@c]; #Output
