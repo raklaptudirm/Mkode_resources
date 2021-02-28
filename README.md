@@ -1,3 +1,4 @@
+# THIS REPO IS ONLY KEPT FOR HISTORIC PURPOSES. IT IS ARCHIVED AND NO LONGER SUPPORTED.
 # Mkode_resources: Resources for the Mkode programming language
 ## Learn Mkode
 Learn MkodeLang in this repository.
